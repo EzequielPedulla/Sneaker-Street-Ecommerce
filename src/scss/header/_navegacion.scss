@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &__links {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+}
+
+.buscador {
+  &__input {
+    display: none;
+  }
+
+  &__lupa {
+    border: none;
+    background-color: transparent;
+    width: 3rem;
+  }
+}
+
+#search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navegacion__bolsa {
+  width: 3rem;
+}
+.catalogo {
+  color: v.$negro;
+  font-size: 2rem;
+}

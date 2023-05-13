@@ -1,0 +1,17 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+  height: 6rem;
+}
+
+.logo {
+  &__desktop {
+    display: none;
+  }
+  &__movil {
+    height: auto;
+    width: 11rem;
+    cursor: pointer;
+  }
+}
