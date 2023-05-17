@@ -8,10 +8,18 @@
 .logo {
   &__desktop {
     display: none;
+    @include m.tablet {
+      display: block;
+    }
   }
+
   &__movil {
     height: auto;
     width: 11rem;
     cursor: pointer;
+
+    @include m.tablet {
+      display: none;
+    }
   }
 }

@@ -6,23 +6,49 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  @include m.tablet {
+    margin-top: 2.5rem;
+    height: 6rem;
+    width: 100%;
+    justify-content: center;
+  }
 
   &__links {
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
   }
 }
 
 .buscador {
   &__input {
     display: none;
+
+    @include m.tablet {
+      display: flex;
+      justify-content: space-between;
+      height: 3rem;
+      min-width: 20rem;
+      max-width: 40rem;
+      border-radius: 15px;
+    }
+    @include m.desktop {
+      display: flex;
+      justify-content: space-between;
+      height: 3rem;
+      min-width: 30rem;
+      max-width: 40rem;
+      border-radius: 15px;
+    }
   }
 
   &__lupa {
     border: none;
     background-color: transparent;
     width: 3rem;
+    position: relative;
+    @include m.tablet {
+      display: none;
+    }
   }
 }
 
@@ -38,4 +64,8 @@
 .catalogo {
   color: v.$negro;
   font-size: 2rem;
+  @include m.tablet {
+    font-size: 2rem;
+    padding-right: 2rem;
+  }
 }
