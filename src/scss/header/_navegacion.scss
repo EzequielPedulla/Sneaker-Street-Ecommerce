@@ -22,22 +22,27 @@
 .buscador {
   &__input {
     display: none;
+    margin-top: 1.5rem;
+    border-radius: 17px;
+    min-width: 20rem;
+    max-width: 40rem;
+    height: 4rem;
+    background-color: #f5f8fa;
+    box-shadow: inset 0 0 0 1px #e1e8ed;
+    border: 0;
+    padding: 1rem;
 
     @include m.tablet {
       display: flex;
       justify-content: space-between;
-      height: 3rem;
-      min-width: 20rem;
-      max-width: 40rem;
-      border-radius: 15px;
     }
     @include m.desktop {
       display: flex;
       justify-content: space-between;
       height: 3rem;
+      margin-top: 1.5rem;
       min-width: 30rem;
       max-width: 40rem;
-      border-radius: 15px;
     }
   }
 
@@ -64,6 +69,7 @@
 .catalogo {
   color: v.$negro;
   font-size: 2rem;
+
   @include m.tablet {
     font-size: 2rem;
     padding-right: 2rem;

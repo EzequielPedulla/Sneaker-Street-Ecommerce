@@ -8,8 +8,10 @@
 .logo {
   &__desktop {
     display: none;
+
     @include m.tablet {
       display: block;
+      height: 35rem;
     }
   }
 
