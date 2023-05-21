@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+  background-color: #282b30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  &__logo {
+    height: 15rem;
+    width: 300rem;
+    @include m.tablet {
+      margin-left: 12rem;
+      width: 25rem;
+      height: 13rem;
+    }
+    @include m.desktop {
+      margin-left: 38rem;
+      width: 50rem;
+      height: 20rem;
+    }
+  }
+  &__icons {
+    width: 35rem;
+    margin: 1rem;
+    @include m.tablet {
+      margin-top: 2.5rem;
+      margin-right: 3rem;
+      width: 3.5rem;
+    }
+    @include m.desktop {
+      margin-top: 2.5rem;
+      margin-right: 10rem;
+      width: 4rem;
+    }
+  }
+
+  &__text {
+    color: v.$blanco;
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    p {
+      font-size: 1.5rem;
+      margin: 2rem 0;
+    }
+  }
+}

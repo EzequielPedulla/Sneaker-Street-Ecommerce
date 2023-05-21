@@ -15,10 +15,15 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 .card__img {
-  width: 26rem;
-  height: 26rem;
+  width: 23rem;
+  height: 23rem;
   @include m.tablet {
     margin-top: 2rem;
+  }
+  @include m.desktop {
+    height: 45rem;
+    width: 45rem;
   }
 }
