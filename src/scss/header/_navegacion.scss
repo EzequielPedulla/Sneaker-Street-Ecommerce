@@ -7,7 +7,7 @@
   align-items: center;
   width: 100%;
   @include m.tablet {
-    margin-top: 2.5rem;
+    margin-top: 5rem;
     height: 6rem;
     width: 100%;
     justify-content: center;
@@ -18,14 +18,16 @@
     align-items: center;
   }
 }
-
+.navegacion__buscador {
+  @include m.tablet {
+    margin-top: 10rem;
+  }
+}
 .buscador {
   &__input {
-    display: none;
     margin-top: 1.5rem;
     border-radius: 17px;
-    min-width: 20rem;
-    max-width: 40rem;
+    width: 15rem;
     height: 4rem;
     background-color: #f5f8fa;
     box-shadow: inset 0 0 0 1px #e1e8ed;
@@ -33,30 +35,47 @@
     padding: 1rem;
 
     @include m.tablet {
+      width: 25rem;
       display: flex;
       justify-content: space-between;
     }
     @include m.desktop {
+      width: 35rem;
       display: flex;
       justify-content: space-between;
       height: 3rem;
       margin-top: 1.5rem;
-      min-width: 30rem;
-      max-width: 40rem;
-    }
-  }
-
-  &__lupa {
-    border: none;
-    background-color: transparent;
-    width: 3rem;
-    position: relative;
-    @include m.tablet {
-      display: none;
     }
   }
 }
+.product__list {
+  font-size: 1.3rem;
+  text-align: center;
+  width: 100%;
+  background-color: v.$blanco;
+  margin-bottom: 3.5rem;
+  @include m.tablet {
+    font-size: 1.5rem;
+  }
+  @include m.desktop {
+    font-size: 1.6rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+.article {
+  color: v.$negro;
 
+  &:hover {
+    background-color: v.$grisClaro;
+  }
+}
+
+.filtro {
+  display: none;
+}
 #search-button {
   background-color: transparent;
   border: none;

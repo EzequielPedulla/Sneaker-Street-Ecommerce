@@ -59,21 +59,36 @@
   height: 40rem;
   margin: 2rem 1rem;
   padding: 0 3rem;
+  cursor: pointer;
   @include m.desktop {
     width: 70rem;
     height: 60rem;
   }
 }
-.wrapper__img {
+.thumbnail__img {
   display: flex;
+  justify-content: space-evenly;
   gap: 1rem;
-  width: 20rem;
-  height: 10rem;
-  margin: 2rem 4rem;
+  margin: 0 4rem;
+  cursor: pointer;
   @include m.desktop {
-    width: 25rem;
+    width: 35rem;
+    height: 10rem;
+    margin: 0 3rem;
+  }
+}
+.thumbnail {
+  width: 9rem;
+  height: 10rem;
+  opacity: 0.7;
+  transition: 0.3s;
+  @include m.desktop {
+    width: 9rem;
     height: 10rem;
   }
+}
+.active {
+  opacity: 1;
 }
 
 .btn {
