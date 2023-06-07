@@ -13,40 +13,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  //buscador
+  // Buscador
 
-  window.onload = function () {
-    const productlist = document.querySelector('.product__list');
-    productlist.style.display = 'none'; // Ocultar la lista de productos al cargar la página
-  };
+  const buscadorInput = document.querySelector('.buscador__input');
+  const productlist = document.querySelector('.product__list');
+  const articles = document.querySelectorAll('.article');
 
-  document.addEventListener('click', (e) => {
-    const buscadorInput = document.querySelector('.buscador__input');
-    const productlist = document.querySelector('.product__list');
+  // Ocultar la lista de productos al cargar la página
+  productlist.style.display = 'none';
 
-    if (e.target === buscadorInput) {
-      productlist.style.display = 'block'; // Mostrar la lista de productos al hacer clic en el campo de búsqueda
-    } else {
-      productlist.style.display = 'none'; // Ocultar la lista de productos al hacer clic en cualquier otra parte
+  // Mostrar la lista de productos al hacer clic en el campo de búsqueda
+  buscadorInput.addEventListener('click', function () {
+    if (buscadorInput.value.trim() !== '') {
+      productlist.style.display = 'block';
     }
   });
 
-  document.addEventListener('keyup', (e) => {
-    if (e.target.matches('.buscador__input')) {
-      if (e.key === 'Escape') e.target.value = '';
+  // Filtrar los artículos en tiempo real al escribir en el campo de búsqueda
+  buscadorInput.addEventListener('input', function () {
+    const searchTerm = buscadorInput.value.trim().toLowerCase();
 
-      const searchTerm = e.target.value.toLowerCase();
-      const articles = document.querySelectorAll('.article');
+    articles.forEach((article) => {
+      const articleText = article.textContent.toLowerCase();
 
-      articles.forEach((article) => {
-        const articleText = article.textContent.toLowerCase();
+      if (articleText.includes(searchTerm)) {
+        article.style.display = 'block'; // Mostrar artículo que coincide con la búsqueda
+      } else {
+        article.style.display = 'none'; // Ocultar artículo que no coincide con la búsqueda
+      }
+    });
 
-        if (articleText.includes(searchTerm)) {
-          article.style.display = 'block'; // Mostrar artículo
-        } else {
-          article.style.display = 'none'; // Ocultar artículo
-        }
-      });
+    // Mostrar u ocultar la lista de productos según si hay resultados de búsqueda o no
+    if (searchTerm === '') {
+      productlist.style.display = 'none';
+    } else {
+      productlist.style.display = 'block';
     }
   });
 });

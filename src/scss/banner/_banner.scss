@@ -4,13 +4,12 @@
 .descuento {
   display: flex;
   justify-content: center;
-  margin-top: 7rem;
+  margin-top: 4rem;
   background-color: v.$grisClaro;
 }
 .banner {
   display: flex;
   justify-content: center;
-
   max-height: 20rem;
   height: 15rem;
   @include m.desktop {
