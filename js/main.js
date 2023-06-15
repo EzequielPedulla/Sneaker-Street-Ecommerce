@@ -50,4 +50,45 @@ document.addEventListener('DOMContentLoaded', function () {
       productlist.style.display = 'block';
     }
   });
+
+  // Obtener las referencias a los elementos relevantes
+  const filtroSelect = document.getElementById('filtros');
+  const cardsContainer = document.querySelector('.cards');
+  let tarjetasIniciales = Array.from(
+    cardsContainer.getElementsByClassName('card__grid')
+  );
+
+  // Agregar el evento change al elemento select
+  filtroSelect.addEventListener('change', function () {
+    // Obtener el valor seleccionado
+    const filtroSeleccionado = filtroSelect.value;
+
+    if (filtroSeleccionado === 'relevantes') {
+      // Ordenar las tarjetas por las más recientes
+      const tarjetas = tarjetasIniciales.slice(); // Hacer una copia del arreglo inicial
+      tarjetas.sort(function (a, b) {
+        return b.dataset.timestamp - a.dataset.timestamp;
+      });
+      for (const tarjeta of tarjetas) {
+        cardsContainer.appendChild(tarjeta);
+      }
+    } else if (filtroSeleccionado === '') {
+      // Ordenar las tarjetas alfabéticamente
+      const tarjetas = tarjetasIniciales.slice(); // Hacer una copia del arreglo inicial
+      tarjetas.sort(function (a, b) {
+        const tituloA = a.querySelector('h4').textContent.toUpperCase();
+        const tituloB = b.querySelector('h4').textContent.toUpperCase();
+        if (tituloA < tituloB) {
+          return -1;
+        } else if (tituloA > tituloB) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+      for (const tarjeta of tarjetas) {
+        cardsContainer.appendChild(tarjeta);
+      }
+    }
+  });
 });
